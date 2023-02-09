@@ -145,7 +145,9 @@ Q15. What is difference between / and // operators?
 
 Ans. In Python, "/" (division) and "//" (floor division) are two different types of division operators.
  the "/" operator returns a floating-point number, while the "//" operator returns an integer.
-ex. print(10 / 3) # Out put will be 3.3333333333333335
+ex.
+print(10 / 3) # Out put will be 3.3333333333333335
+
     print(10 // 3)  # Out put will be 3
 
 Q16. Write a code that gives following as an output.
@@ -153,16 +155,22 @@ Q16. Write a code that gives following as an output.
 iNeuroniNeuroniNeuroniNeuron
 ```
 
-Ans. print("iNeuron" * 4)
+Ans. 
+
+print("iNeuron" * 4)
 
 
 Q17. Write a code to take a number as an input from the user and check if the number is odd or even.
 
 Ans. 
 num = int(input("Enter a number: "))
+
 if num % 2 == 0:
+
     print(num, "is even.")
+    
 else:
+
     print(num, "is odd.")
 
 
