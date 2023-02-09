@@ -120,7 +120,8 @@ Ans. Indentation refers to the spaces at the beginning of a code line. In Python
 Q13. How can we throw some output in Python?
 
 Ans.We can output text in Python using the "print()" function.
-ex. print("Hello, World!")
+ex. 
+print("Hello, World!")
 This will output: Hello, World!
 
 
@@ -216,8 +217,11 @@ ex.
 x = 5
 
 if x > 0:
+
     print("x is positive")
+    
 else:
+
     print("x is non-positive")
 
 
@@ -243,23 +247,33 @@ We can use multiple elif statements to specify multiple conditions to be tested.
 
 else: The else keyword is used in conjunction with an if statement to specify a block of code that should be executed if all of the conditions in the if and elif statements are not met. 
 The syntax for an else statement is:
+
 if condition_1:
+
     # code to be executed if condition_1 is True
+    
 elif condition_2:
+
     # code to be executed if condition_1 is False and condition_2 is True
 else:
+
     # code to be executed if condition_1 and condition_2 are False
+    
 The else statement provides a catch-all clause that will be executed if none of the conditions in the if and elif statements are met.
 
 
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
 
 Ans.
+
 age = int(input("Enter your age: "))
 
 if age >= 18:
+
     print("I can vote")
+    
 else:
+
     print("I can't vote")
 
 
@@ -269,16 +283,23 @@ numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
 
 Ans.
+
 numbers = [12, 75, 150, 180, 145, 525, 50]
 
 def even_sum(numbers):
+
     even_sum = 0
+    
     for number in numbers:
+    
         if number % 2 == 0:
+        
             even_sum += number
+            
     return even_sum
 
 result = even_sum(numbers)
+
 print("The sum of all even numbers is:", result)
 
 
@@ -286,17 +307,25 @@ print("The sum of all even numbers is:", result)
 Q24. Write a code to take 3 numbers as an input from the user and display the greatest no as output.
 
 Ans. 
+
 def find_greatest_number(num1, num2, num3):
+
     greatest = num1
+    
     if num2 > greatest:
+    
         greatest = num2
+        
     if num3 > greatest:
+    
         greatest = num3
 
     print("The greatest number is: ", greatest)
 
 num1 = int(input("Enter first number: "))
+
 num2 = int(input("Enter second number: "))
+
 num3 = int(input("Enter third number: "))
 
 find_greatest_number(num1, num2, num3)
@@ -314,12 +343,19 @@ numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
 
 Ans.
+
 numbers = [12, 75, 150, 180, 145, 525, 50]
 
 for num in numbers:
+
     if num > 150:
+    
         continue
+        
     if num % 5 == 0:
+    
         if num > 500:
+        
             break
+            
         print(num)
