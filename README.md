@@ -359,3 +359,289 @@ for num in numbers:
             break
             
         print(num)
+        
+ Q26. What is a string? How can we declare string in Python?
+Ans In Python, a string is a sequence of characters enclosed within either single quotes ('') or double quotes (""). It is a data type used to represent textual data. Strings are immutable, meaning their values cannot be changed after they are created.
+are a few examples:
+str1 = 'Hello, World!'  # Single quotes
+str2 = "Python Programming"  # Double quotes
+str3 = '''This is a multi-line
+string'''  # Triple quotes for multi-line strings 
+
+Q27. How can we access the string using its index?
+Ans.  In Python, you can access individual characters of a string using indexing. The indexing starts from 0 for the first character, and you can use positive or negative indices to access characters from the beginning or end of the string, respectively.
+Here's an example:
+string = "Hello, World!"
+print(string[0])    # Output: 'H' (first character)
+print(string[7])    # Output: 'W' (eighth character)
+print(string[-1])   # Output: '!' (last character)
+print(string[-6])   # Output: ' ' (space character)
+
+Q28. Write a code to get the desired output of the following
+
+string = "Big Data iNeuron"
+desired_output = "iNeuron"
+Ans. 
+string = "Big Data iNeuron"
+desired_output = string[8:]  # Extracts the substring from index 8 till the end
+print(desired_output)  # Output: "iNeuron"
+
+Q29. Write a code to get the desired output of the following
+
+string = "Big Data iNeuron"
+desired_output = "norueNi"
+
+Q30. Resverse the string given in the above question.
+Ans. To reverse the string, you can use string slicing with a step value of -1. Here's the code:
+string = "Big Data iNeuron"
+reversed_string = string[::-1]  # Slicing with step -1 to reverse the string
+print(reversed_string)  # Output: "norueNi ataD giB"
+
+
+
+Q31. How can you delete entire string at once?
+Ans.  In Python, strings are immutable, which means you cannot delete or modify a string directly. However, you can delete a string variable using the del keyword. Once deleted, the memory occupied by the string will be freed.
+
+Here's an example:
+
+string = "Hello, World!"
+del string
+# Now, the string variable no longer exists
+
+Q32. What is escape sequence?
+Ans. An escape sequence is a combination of characters used to represent certain characters that are difficult to type or are reserved in a string literal. Escape sequences are represented by a backslash () followed by a specific character or code.
+
+Some common escape sequences in Python are:
+
+'\': Single quote
+"\": Double quote
+'\\': Backslash
+'\n': New
+
+Q33. How can you print the below string?
+
+'iNeuron's Big Data Course'
+Ans. 
+print("iNeuron's Big Data Course")
+# Output: iNeuron's Big Data Course
+
+print('iNeuron\'s Big Data Course')
+# Output: iNeuron's Big Data Course
+
+Q34. What is a list in Python?
+Ans.In Python, a list is an ordered collection of items enclosed in square brackets ([]). It is a mutable data type, meaning you can modify the elements of a list after it is created. A list can contain elements of different data types, such as integers, strings, floats, or even other lists. Lists are one of the most commonly used data structures in Python.
+
+Q35. How can you create a list in Python?
+Ans.To create a list in Python, you can enclose a comma-separated sequence of elements inside square brackets ([]). Here are a few examples:
+
+empty_list = []  # Empty list
+
+numbers = [1, 2, 3, 4, 5]  # List of integers
+
+fruits = ['apple', 'banana', 'orange']  # List of strings
+
+mixed = [10, 'hello', 3.14, True]  # List with elements of different types
+
+nested = [[1, 2], ['a', 'b', 'c']]  # List containing other lists
+
+Q36. How can we access the elements in a list?
+Ans. In Python, you can access individual elements of a list using indexing. List indexing starts from 0 for the first element, and you can use positive or negative indices to access elements from the beginning or end of the list, respectively.
+
+Here's an example:
+
+numbers = [1, 2, 3, 4, 5]
+
+print(numbers[0])    # Output: 1 (first element)
+print(numbers[2])    # Output: 3 (third element)
+print(numbers[-1])   # Output: 5 (last element)
+print(numbers[-3])   # Output: 3 (third element from the end)
+
+Q37. Write a code to access the word "iNeuron" from the given list.
+
+lst = [1,2,3,"Hi",[45,54, "iNeuron"], "Big Data"]
+Ans.Here's the code to access the word "iNeuron" from the given list:
+
+lst = [1, 2, 3, "Hi", [45, 54, "iNeuron"], "Big Data"]
+word = lst[4][2]  # Accessing the word "iNeuron" using nested indexing
+print(word)  # Output: iNeuron
+
+Q38. Take a list as an input from the user and find the length of the list.
+Ans.
+lst = input("Enter elements of the list (comma-separated): ").split(",")
+length = len(lst)
+print("Length of the list:", length)
+
+
+Q39. Add the word "Big" in the 3rd index of the given list.
+
+lst = ["Welcome", "to", "Data", "course"]
+Ans. 
+lst = ["Welcome", "to", "Data", "course"]
+lst.insert(3, "Big")
+print(lst)
+# Output: ["Welcome", "to", "Data", "Big", "course"]
+
+
+Q40. What is a tuple? How is it different from list?
+Ans.In Python, a tuple is an ordered collection of elements enclosed in parentheses (). It is similar to a list, but the main difference is that tuples are immutable, meaning their elements cannot be modified once they are assigned. Tuples are commonly used to store related pieces of information together.
+
+The main differences between a tuple and a list are:
+
+Tuples are immutable, whereas lists are mutable.
+Tuples are typically used to store heterogeneous data (elements of different types), while lists can store elements of any type.
+Tuples use parentheses () for declaration, while lists use square brackets [].
+
+Q41. How can you create a tuple in Python?
+Ans.To create a tuple in Python, you can enclose a comma-separated sequence of elements inside parentheses (). 
+Here are a few examples:
+
+empty_tuple = ()  # Empty tuple
+
+single_value_tuple = (10,)  # Tuple with a single element
+
+mixed_tuple = (10, 'hello', 3.14, True)  # Tuple with elements of different types
+
+nested_tuple = ((1, 2), ('a', 'b', 'c'))  # Tuple containing other tuples
+
+
+Q42. Create a tuple and try to add your name in the tuple. Are you able to do it? Support your answer with reason.
+Ans.No, We cannot directly add an element to an existing tuple because tuples are immutable. Once a tuple is created, we cannot modify its elements. If we try to use the append() or insert() method on a tuple, it will result in an error.
+
+tuple1 = ("apple", "banana", "cherry")
+tuple1.append("orange")  # Error: 'tuple' object has no attribute 'append'
+
+To add elements to a tuple, you need to create a new tuple with the desired elements.
+
+Q43. Can two tuple be appended. If yes, write a code for it. If not, why?
+Ans.  No, two tuples cannot be appended directly because tuples are immutable, and their elements cannot be modified. However, you can concatenate two tuples to create a new tuple that contains elements from both tuples.
+
+Here's an example of concatenating two tuples:
+
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+concatenated_tuple = tuple1 + tuple2
+print(concatenated_tuple)
+# Output: (1, 2, 3, 4, 5, 6)
+
+Q44. Take a tuple as an input and print the count of elements in it.
+Ans. Here's the code to take a tuple as input and print the count of elements in it:
+
+tuple1 = tuple(input("Enter elements of the tuple (comma-separated): ").split(","))
+count = len(tuple1)
+print("Count of elements:", count)
+
+Q45. What are sets in Python?
+Ans.  In Python, a set is an unordered collection of unique elements. It is a built-in data type that is used to store multiple items in a single variable. Sets are defined by enclosing a comma-separated sequence of elements inside curly braces {} or by using the set() constructor.
+
+Sets are commonly used to perform mathematical set operations such as union, intersection, and difference. They provide methods to add, remove, and perform various operations on elements.
+
+Q46. How can you create a set?
+Ans.There are two ways to create a set in Python:
+
+Using curly braces {}:
+
+set1 = {1, 2, 3, 4, 5}
+
+Using the set() constructor:
+
+set2 = set([1, 2, 3, 4, 5])
+
+In both cases, we define a sequence of elements separated by commas inside the braces or passed as an argument to the set() constructor.
+
+
+Q47. Create a set and add "iNeuron" in your set.
+Ans.
+my_set = {"Python", "Data Science", "Machine Learning"}
+my_set.add("iNeuron")
+print(my_set)
+
+
+Q48. Try to add multiple values using add() function.
+Ans.The add() function in sets is used to add a single element to the set. If you want to add multiple values to a set, you can use the update() function or directly provide multiple values when creating the set.
+
+Using the update() function:
+
+my_set = {"Python", "Data Science"}
+my_set.update(["Machine Learning", "Deep Learning"])
+print(my_set)
+
+Output:
+{'Python', 'Data Science', 'Machine Learning', 'Deep Learning'}
+
+Q49. How is update() different from add()?
+Ans.The add() method in sets is used to add a single element to the set, whereas the update() method is used to add multiple elements to the set. The update() method takes an iterable as an argument and adds all the elements from that iterable to the set.
+
+Here's an example to illustrate the difference:
+
+my_set = {"Apple", "Banana"}
+my_set.add("Orange")
+print(my_set)
+# Output: {'Banana', 'Orange', 'Apple'}
+
+my_set.update(["Mango", "Pineapple"])
+print(my_set)
+# Output: {'Banana', 'Orange', 'Mango', 'Pineapple', 'Apple'}
+
+Q50. What is clear() in sets?
+Ans.In Python sets, the clear() method is used to remove all elements from a set, making it an empty set. It modifies the set in place and does not return any value.
+
+Here's an example:
+
+my_set = {1, 2, 3, 4, 5}
+print(my_set)
+# Output: {1, 2, 3, 4, 5}
+
+my_set.clear()
+print(my_set)
+# Output: set()
+
+Q51. What is frozen set?
+Ans.In Python, a frozen set is an immutable version of a set. It is an unordered collection of unique elements, just like a regular set, but once a frozen set is created, its elements cannot be changed or modified. Frozen sets are useful when you need to create a set that is guaranteed to remain unchanged.
+
+Frozen sets can be created by using the frozenset() function with an iterable as an argument. 
+Here's an example:
+
+my_frozen_set = frozenset([1, 2, 3, 4, 5])
+
+Once a frozen set is created, we cannot add or remove elements from it.
+
+Q52. How is frozen set different from set?
+Ans.The main difference between a frozen set and a regular set in Python is that a frozen set is immutable, meaning its elements cannot be changed once it is created, while a regular set is mutable and allows modifications to its elements.
+
+Here are some key differences:
+
+Mutability: A regular set is mutable, which means you can add or remove elements from it using methods like add(), remove(), or discard(). On the other hand, a frozen set is immutable, so you cannot modify its elements after creation.
+
+Hashability: Frozen sets are hashable and can be used as elements of other sets or as keys in dictionaries, while regular sets are not hashable because they are mutable.
+
+Usage: Regular sets are commonly used when you need to store a collection of unique and mutable elements, while frozen sets are used when you want to create an immutable set that won't be modified.
+
+Q53. What is union() in sets? Explain via code.
+Ans. In sets, the union() method is used to return a new set that contains all the unique elements from two or more sets. It performs the union operation, which combines the elements from multiple sets without any duplicates.
+
+Here's an example to explain the union() method:
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+set3 = {5, 6, 7}
+
+union_set = set1.union(set2, set3)
+print(union_set)
+
+Output:
+{1, 2, 3, 4, 5, 6, 7}
+
+Q54. What is intersection() in sets? Explain via code.
+Ans.In sets, the intersection() method is used to return a new set that contains the common elements between two or more sets. It performs the intersection operation, which finds the elements that exist in all the sets.
+
+Here's an example to explain the intersection() method:
+
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5}
+set3 = {4, 5, 6}
+
+intersection_set = set1.intersection(set2, set3)
+print(intersection_set)
+
+Output:
+{4}
