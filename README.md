@@ -645,3 +645,583 @@ print(intersection_set)
 
 Output:
 {4}
+
+Q55. What is dictionary ibn Python?
+Ans. A dictionary in Python is a built-in data structure that stores a collection of key-value pairs. It is used to map keys to corresponding values, allowing efficient retrieval of values based on their associated keys. Dictionaries are mutable, unordered, and indexed by keys. Each key in a dictionary must be unique and can be of any immutable type, while the corresponding values can be of any type.
+
+
+Q56. How is dictionary different from all other data structures.
+Ans.Dictionaries differ from other data structures in Python in the following ways:
+
+Lists and tuples are ordered collections of elements, while dictionaries are unordered.
+Dictionaries use key-value pairs to store and access data, while lists and tuples use indexing to access elements.
+Dictionaries are mutable, meaning their contents can be modified after creation, while tuples are immutable and lists are mutable.
+Dictionaries provide efficient lookup and retrieval of values based on their keys, using a hash table implementation.
+
+Q57. How can we delare a dictionary in Python?
+Ans.There are several ways to declare a dictionary in Python. Here are a few examples:
+
+Using curly braces {} and separating key-value pairs with colons:
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+Using the dict() function:
+
+my_dict = dict(key1='value1', key2='value2', key3='value3')
+Using a combination of lists for keys and values:
+
+keys = ['key1', 'key2', 'key3']
+values = ['value1', 'value2', 'value3']
+my_dict = dict(zip(keys, values))
+
+Q58. What will the output of the following?
+
+var = {}
+print(type(var))
+Ans.The output of the following code will be:
+
+<class 'dict'>
+
+Q59. How can we add an element in a dictionary?
+Ans.To add an element to a dictionary in Python, we can assign a value to a new key or an existing key using the assignment operator (=). Here's an example:
+
+my_dict = {'key1': 'value1', 'key2': 'value2'}
+my_dict['key3'] = 'value3'  # Adding a new key-value pair
+my_dict['key2'] = 'new value'  # Modifying the value of an existing key
+
+After executing the above code, the dictionary my_dict will have three key-value pairs:
+
+{
+  'key1': 'value1',
+  'key2': 'new value',
+  'key3': 'value3'
+}
+
+Q60. Create a dictionary and access all the values in that dictionary.
+Ans. To create a dictionary and access all the values, you can follow this example:
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+# Accessing all the values in the dictionary
+values = my_dict.values()
+
+# Printing all the values
+for value in values:
+    print(value)
+
+Q61. Create a nested dictionary and access all the element in the inner dictionary.
+Ans.To create a nested dictionary and access all the elements in the inner dictionary, you can use the following example:
+my_dict = {
+    'outer_key1': {'inner_key1': 'value1', 'inner_key2': 'value2'},
+    'outer_key2': {'inner_key3': 'value3', 'inner_key4': 'value4'}
+}
+# Accessing all the elements in the inner dictionary
+for outer_key, inner_dict in my_dict.items():
+    for inner_key, value in inner_dict.items():
+        print(f"Outer Key: {outer_key}, Inner Key: {inner_key}, Value: {value}")
+
+
+Q62. What is the use of get() function?
+Ans.The get() function in Python is used to retrieve the value associated with a given key in a dictionary. It takes the key as the argument and returns the corresponding value. The advantage of using get() is that if the key is not present in the dictionary, it returns a default value (which can be specified as the second argument to get()) instead of raising a KeyError exception.
+
+Here's an example of using the get() function:
+
+my_dict = {'key1': 'value1', 'key2': 'value2'}
+value = my_dict.get('key1')
+print(value)  # Output: 'value1'
+
+value = my_dict.get('key3', 'default')
+print(value)  # Output: 'default'
+
+Q63. What is the use of items() function?
+Ans.The items() function is used to return a list of all the key-value pairs in a dictionary. It returns a view object that contains tuples of the form (key, value). This function is often used when you need to iterate over both the keys and values of a dictionary simultaneously.
+
+Here's an example of using the items() function:
+my_dict = {'key1': 'value1', 'key2': 'value2'}
+
+# Iterating over key-value pairs using items()
+for key, value in my_dict.items():
+    print(f"Key: {key}, Value: {value}")
+
+Q64. What is the use of pop() function?
+Ans.The pop() function in Python is used to remove and return the value associated with a specified key from a dictionary. It takes the key as an argument and returns the corresponding value. After removing the key-value pair from the dictionary, it is no longer accessible.
+
+Here's an example of using the pop() function:
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+value = my_dict.pop('key2')
+print(value)  # Output: 'value2'
+print(my_dict)  # Output: {'key1': 'value1', 'key3': 'value3'}
+
+Q65. What is the use of popitems() function?
+Ans. The popitem() function in Python is used to remove and return an arbitrary key-value pair from a dictionary. It is useful when you want to remove an element from the dictionary without specifying a particular key. The popitem() function removes the last added key-value pair in versions before Python 3.7, and starting from Python 3.7, it removes a random key-value pair.
+
+Here's an example of using the popitem() function:
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+item = my_dict.popitem()
+print(item)  # Output: ('key3', 'value3')
+print(my_dict)  # Output: {'key1': 'value1', 'key2': 'value2'}
+
+Q66. What is the use of keys() function?
+Ans. The keys() function in Python is used to return a view object that contains all the keys present in a dictionary. The view object behaves like a set, providing various set operations like union, intersection, etc., that can be performed on the keys.
+
+Here's an example of using the keys() function:
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+keys = my_dict.keys()
+print(keys)  # Output: dict_keys(['key1', 'key2', 'key3'])
+
+Q67. What is the use of values() function?
+Ans. The values() function in Python is used to return a view object that contains all the values present in a dictionary. Similar to the keys() function, the view object provided by values() behaves like a set and supports set operations.
+
+Here's an example of using the values() function:
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+values = my_dict.values()
+print(values)  # Output: dict_values(['value1', 'value2', 'value3'])
+
+Q68. What are loops in Python?
+Ans.Loops in Python are control flow structures that allow repetitive execution of a block of code. They help automate repetitive tasks by iterating over a sequence or conditionally executing code until a certain condition is met. Loops enable efficient and concise coding by reducing redundancy.
+
+Q69. How many type of loop are there in Python?
+Ans. There are two types of loops in Python:
+
+for loop: The for loop is used for iterating over a sequence (such as a list, tuple, string, or range) or any iterable object. It executes a block of code for each element in the sequence. The number of iterations is predetermined based on the length of the sequence or iterable.
+
+while loop: The while loop repeatedly executes a block of code as long as a given condition is true. It checks the condition before each iteration and continues until the condition becomes false. The number of iterations is not predetermined and depends on the condition being evaluated.
+
+Q70. What is the difference between for and while loops?
+Ans. The main differences between for and while loops are as follows:
+
+for loops are used when you know the number of iterations in advance (e.g., when iterating over a sequence), while while loops are used when the number of iterations is not known in advance and depends on a condition.
+for loops iterate over a sequence or iterable, whereas while loops repeatedly execute code as long as a condition is true.
+for loops handle iteration automatically, whereas while loops require explicit initialization, condition checking, and updating of variables within the loop.
+for loops are generally used for iterating over known data, while while loops are often used when the termination condition depends on changing values during execution.
+
+Q71. What is the use of continue statement?
+Ans. The continue statement in Python is used to skip the rest of the current iteration of a loop and move to the next iteration. When the continue statement is encountered within a loop, the remaining code in that iteration is skipped, and the loop immediately starts the next iteration.
+
+The main use of the continue statement is to selectively skip certain iterations based on specific conditions, allowing you to exclude certain elements or values from processing within a loop.
+
+Here's an example to demonstrate the use of continue:
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for num in numbers:
+    if num % 2 == 0:
+        continue  # Skip even numbers
+    print(num)
+
+Q72. What is the use of break statement?
+Ans. The break statement in Python is used to terminate the execution of a loop prematurely. When the break statement is encountered within a loop, the loop is immediately exited, and the program continues with the next statement following the loop.
+
+The primary use of the break statement is to exit a loop early based on certain conditions, allowing you to stop further iterations when a specific condition is met.
+
+Here's an example to illustrate the use of break:
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for num in numbers:
+    if num == 6:
+        break  # Exit the loop when 6 is encountered
+    print(num)
+
+Q73. What is the use of pass statement?
+Ans. The pass statement in Python is a placeholder statement that does nothing. It is used when a statement is syntactically required but you don't want to execute any code. The pass statement acts as a null operation, allowing you to have a valid empty block of code.
+
+The primary use of the pass statement is when you are designing the structure of your code or defining a function or class and want to leave the implementation details for later. It serves as a placeholder to prevent a syntax error in situations where an indented block is required.
+
+Here's an example to demonstrate the use of pass:
+
+def some_function():
+    pass  # Placeholder for the function implementation
+
+Q74. What is the use of range() function?
+Ans. The range() function in Python is used to generate a sequence of numbers. It is commonly used in loops to control the number of iterations based on a specific range of values.
+
+The range() function can take one, two, or three arguments:
+
+With one argument: range(stop) generates a sequence from 0 to stop-1.
+With two arguments: range(start, stop) generates a sequence from start to stop-1.
+With three arguments: range(start, stop, step) generates a sequence from start to stop-1 with a specified step size.
+Here are a few examples of using the range() function:
+
+# Example 1: Generate numbers from 0 to 4
+for num in range(5):
+    print(num)  # Output: 0, 1, 2, 3, 4
+
+# Example 2: Generate numbers from 1 to 5
+for num in range(1, 6):
+    print(num)  # Output: 1, 2, 3, 4, 5
+
+# Example 3: Generate even numbers from 0 to 10
+for num in range(0, 11, 2):
+    print(num)  # Output: 0, 2, 4, 6, 8, 10
+
+Q75. How can you loop over a dictionary?
+Ans. To loop over a dictionary in Python, you can use the for loop along with the items() method of the dictionary. The items() method returns a view object that contains tuples of key-value pairs from the dictionary. By iterating over this view object, you can access both the keys and the corresponding values.
+
+Q76. Write a Python program to find the factorial of a given number.
+Ans. 
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+number = int(input("Enter a number: "))
+factorial_value = factorial(number)
+print("Factorial of", number, "is", factorial_value)
+
+
+Q77. Write a Python program to calculate the simple interest. Formula to calculate simple interest is SI = (PRT)/100
+Ans. 
+principal = float(input("Enter the principal amount: "))
+rate = float(input("Enter the interest rate: "))
+time = float(input("Enter the time period (in years): "))
+
+simple_interest = (principal * rate * time) / 100
+
+print("Simple Interest:", simple_interest)
+
+
+Q78. Write a Python program to calculate the compound interest. Formula of compound interest is A = P(1+ R/100)^t.
+Ans. 
+principal = float(input("Enter the principal amount: "))
+rate = float(input("Enter the interest rate: "))
+time = float(input("Enter the time period (in years): "))
+
+compound_interest = principal * (pow((1 + rate / 100), time))
+
+print("Compound Interest:", compound_interest)
+
+
+Q79. Write a Python program to check if a number is prime or not.
+Ans. 
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+number = int(input("Enter a number: "))
+if is_prime(number):
+    print(number, "is a prime number")
+else:
+    print(number, "is not a prime number")
+
+
+Q80. Write a Python program to check Armstrong Number.
+Ans.
+def is_armstrong(n):
+    num_str = str(n)
+    num_digits = len(num_str)
+    sum = 0
+    for digit in num_str:
+        sum += int(digit) ** num_digits
+    if sum == n:
+        return True
+    else:
+        return False
+
+number = int(input("Enter a number: "))
+if is_armstrong(number):
+    print(number, "is an Armstrong number")
+else:
+    print(number, "is not an Armstrong number")
+
+
+
+
+Q81. Write a Python program to find the n-th Fibonacci Number.
+Ans.def fibonacci(n):
+    if n <= 0:
+        return "Invalid input. Please enter a positive integer."
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        fib_minus_1 = 1
+        fib_minus_2 = 0
+        fib = 0
+        for i in range(3, n+1):
+            fib = fib_minus_1 + fib_minus_2
+            fib_minus_2 = fib_minus_1
+            fib_minus_1 = fib
+        return fib
+
+n = int(input("Enter the value of n: "))
+result = fibonacci(n)
+print("The", n, "th Fibonacci number is:", result)
+
+
+Q82. Write a Python program to interchange the first and last element in a list.
+Ans.
+def interchange_first_last(lst):
+    if len(lst) < 2:
+        return "Invalid input. List should have at least two elements."
+    lst[0], lst[-1] = lst[-1], lst[0]
+    return lst
+
+my_list = [1, 2, 3, 4, 5]
+result = interchange_first_last(my_list)
+print("List after interchanging first and last element:", result)
+
+
+Q83. Write a Python program to swap two elements in a list.
+Ans.
+def swap_elements(lst, index1, index2):
+    if 0 <= index1 < len(lst) and 0 <= index2 < len(lst):
+        lst[index1], lst[index2] = lst[index2], lst[index1]
+    return lst
+
+my_list = [1, 2, 3, 4, 5]
+index1 = 1
+index2 = 3
+result = swap_elements(my_list, index1, index2)
+print("List after swapping elements:", result)
+
+
+
+Q84. Write a Python program to find N largest element from a list.
+Ans.
+def find_n_largest_elements(lst, n):
+    if n > len(lst):
+        return "Invalid input. List contains fewer elements than N."
+    sorted_list = sorted(lst, reverse=True)
+    return sorted_list[:n]
+
+my_list = [1, 10, 5, 20, 15, 30, 25]
+N = 3
+result = find_n_largest_elements(my_list, N)
+print("The", N, "largest elements:", result)
+
+
+Q85. Write a Python program to find cumulative sum of a list.
+Ans.
+def cumulative_sum(lst):
+    cum_sum = 0
+    result = []
+    for num in lst:
+        cum_sum += num
+        result.append(cum_sum)
+    return result
+
+my_list = [1, 2, 3, 4, 5]
+cumulative_sum_list = cumulative_sum(my_list)
+print("Cumulative sum of the list:", cumulative_sum_list)
+
+
+Q86. Write a Python program to check if a string is palindrome or not.
+Ans.
+def is_palindrome(string):
+    reversed_string = string[::-1]
+    if string == reversed_string:
+        return True
+    else:
+        return False
+
+my_string = input("Enter a string: ")
+if is_palindrome(my_string):
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+
+
+Q87. Write a Python program to remove i'th element from a string.
+Ans.
+def remove_character(string, index):
+    if 0 <= index < len(string):
+        new_string = string[:index] + string[index + 1:]
+        return new_string
+    else:
+        return "Invalid index"
+
+my_string = input("Enter a string: ")
+i = int(input("Enter the index of the character to remove: "))
+result = remove_character(my_string, i)
+print("String after removing the character:", result)
+
+
+Q88. Write a Python program to check if a substring is present in a given string.
+Ans.
+def is_substring_present(string, substring):
+    if substring in string:
+        return True
+    else:
+        return False
+
+my_string = input("Enter a string: ")
+my_substring = input("Enter a substring to search: ")
+if is_substring_present(my_string, my_substring):
+    print("Substring is present in the string.")
+else:
+    print("Substring is not present in the string.")
+
+
+Q89. Write a Python program to find words which are greater than given length k.
+Ans.
+def find_words_greater_than_k(string, k):
+    words = string.split()
+    result = [word for word in words if len(word) > k]
+    return result
+
+my_string = input("Enter a string: ")
+k = int(input("Enter the value of k: "))
+greater_words = find_words_greater_than_k(my_string, k)
+print("Words greater than length", k, "are:", greater_words)
+
+
+Q90. Write a Python program to extract unquire dictionary values.
+Ans.
+def extract_unique_values(dictionary):
+    unique_values = list(set(dictionary.values()))
+    return unique_values
+
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 2, 'e': 1}
+unique_values = extract_unique_values(my_dict)
+print("Unique values in the dictionary:", unique_values)
+
+
+Q91. Write a Python program to merge two dictionary.
+Ans.
+def merge_dicts(dict1, dict2):
+    merged_dict = {**dict1, **dict2}
+    return merged_dict
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+merged_dict = merge_dicts(dict1, dict2)
+print("Merged dictionary:", merged_dict)
+
+
+
+Q92. Write a Python program to convert a list of tuples into dictionary.
+
+Input : [('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]
+Output : {'Sachin': 10, 'MSD': 7, 'Kohli': 18, 'Rohit': 45}
+Ans.
+def convert_to_dictionary(lst):
+    dictionary = dict(lst)
+    return dictionary
+
+input_list = [('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]
+output_dict = convert_to_dictionary(input_list)
+print("Output dictionary:", output_dict)
+
+Q93. Write a Python program to create a list of tuples from given list having number and its cube in each tuple.
+
+Input: list = [9, 5, 6]
+Output: [(9, 729), (5, 125), (6, 216)]
+Ans.
+def create_tuples_with_cube(lst):
+    tuples_list = [(num, num ** 3) for num in lst]
+    return tuples_list
+
+input_list = [9, 5, 6]
+output_tuples = create_tuples_with_cube(input_list)
+print("Output list of tuples:", output_tuples)
+
+Q94. Write a Python program to get all combinations of 2 tuples.
+
+Input : test_tuple1 = (7, 2), test_tuple2 = (7, 8)
+Output : [(7, 7), (7, 8), (2, 7), (2, 8), (7, 7), (7, 2), (8, 7), (8, 2)]
+Ans. 
+from itertools import product
+
+test_tuple1 = (7, 2)
+test_tuple2 = (7, 8)
+
+combinations = list(product(test_tuple1, test_tuple2))
+print("All combinations of 2 tuples:", combinations)
+
+Q95. Write a Python program to sort a list of tuples by second item.
+
+Input : [('for', 24), ('Geeks', 8), ('Geeks', 30)] 
+Output : [('Geeks', 8), ('for', 24), ('Geeks', 30)]
+Ans.
+def sort_list_of_tuples(lst):
+    sorted_list = sorted(lst, key=lambda x: x[1])
+    return sorted_list
+
+input_list = [('for', 24), ('Geeks', 8), ('Geeks', 30)]
+output_list = sort_list_of_tuples(input_list)
+print("Sorted list of tuples:", output_list)
+
+Q96. Write a python program to print below pattern.
+Ans.
+n = 5
+for i in range(n):
+    for j in range(i+1):
+        print("*", end=" ")
+    print()
+
+Output:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+Q97. Write a python program to print below pattern.
+
+    *
+   **
+  ***
+ ****
+*****
+Ans.
+n = 5
+for i in range(n):
+    for j in range(n - i - 1):
+        print(" ", end="")
+    for k in range(i + 1):
+        print("*", end="")
+    print()
+
+Q98. Write a python program to print below pattern.
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+Ans.
+n = 5
+for i in range(n):
+    for j in range(n - i - 1):
+        print(" ", end="")
+    for k in range(i + 1):
+        print("*", end=" ")
+    print()
+
+Q99. Write a python program to print below pattern.
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+Ans.
+n = 5
+for i in range(n):
+    for j in range(i + 1):
+        print(j + 1, end=" ")
+    print()
+
+Q100. Write a python program to print below pattern.
+
+A 
+B B 
+C C C 
+D D D D 
+E E E E E 
+Ans.
+n = 5
+for i in range(n):
+    for j in range(i + 1):
+        print(chr(i + 65), end=" ")
+    print()
